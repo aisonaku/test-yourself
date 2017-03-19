@@ -1,5 +1,5 @@
 class UserAnswer < ApplicationRecord
   belongs_to :answer
   belongs_to :user
-  belongs_to :test
+  belongs_to :quiz
 end
