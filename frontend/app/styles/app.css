@@ -1,0 +1,116 @@
+body {
+   margin: 0;
+   font-family: Helvetica;
+}
+
+.tys-wrapper {
+   color: #6f5f8e;
+}
+
+.tys-button {
+   background-color: #fff;
+   cursor: pointer;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   font-size: 15px;
+   height: 30px;
+}
+
+.tys-button:hover {
+   background-color: #6f5f8e;
+   color: #fff;
+}
+
+.tys-button:focus {
+   outline: none;
+}
+
+.tys-questionnairies-filter {
+   position: fixed;
+   font-size: 19px;
+   left: 20px;
+   width: 15vw;
+}
+
+.tys-questionnairies-filter-header {
+   margin: 16px 0 16px 0;
+}
+
+.tys-questionnairies-filter-clear {
+   color: #ccc;
+   cursor: pointer;
+   margin-top: 8px;
+}
+
+.tys-questionnairies-filter-category-item {
+   border: 1px solid #ccc;
+   padding: 4px 0 4px 0;
+   cursor: pointer;
+}
+
+.tys-questionnairies-filter-category-item:hover, .tys-questionnairies-filter-category-item.hightlighted {
+   background-color: #6f5f8e;
+   color: #fff;
+}
+
+.tys-questionnairies-filter-category-item + .tys-questionnairies-filter-category-item {
+   border-top: none;
+}
+
+.tys-header {
+   height: 50px;
+   width: 100%;
+   box-shadow: 0 0 10px #000;
+   background-color: #fff;
+   position: fixed;
+   display: inline-flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.tys-header-logo {
+   width: 70px;
+   height: 50px;
+   background-color: #6f5f8e;
+   text-align: center;
+   color: #fff;
+}
+
+.tys-header-buttons > * {
+   margin-right: 16px;
+}
+
+.tys-body {
+   padding-top: 50px;
+   text-align: center;
+}
+
+.tys-questionnairies {
+   display: inline-block;
+   padding-top: 30px;
+   width: 300px;
+}
+
+.text-shortcut {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+.tys-questionnairies-item {
+   padding: 8px;
+}
+
+.tys-questionnairies-description-button {
+   width: 100%;
+}
+
+.tys-questionnairies-item > *:not(.tys-questionnairies-title) {
+   margin-top: 6px;
+}
+
+.tys-questionnairies-title {
+   font-size: 20px;
+   text-decoration: underline;
+}
