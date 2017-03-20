@@ -4,15 +4,15 @@ export default Ember.Controller.extend({
    actions: {
       filterByCategory: function(categoryId) {
          if(categoryId !== '') {
-            return this.get('store').query('questionnairy', {
+            return this.get('store').query('quiz', {
                categoryid: categoryId
             });
          } else {
-            return this.get('store').findAll('questionnairy');
+            return this.get('store').findAll('quiz');
          }
       },
       getAllCategoryes: function() {
-         return this.get('store').findAll('questionnairy').then(data => {
+         return this.get('store').findAll('quiz').then(data => {
             let uniqObject = {};
             data.toArray().forEach(item => {
                uniqObject[item.get('categoryid')] = item.get('categorytitle');
