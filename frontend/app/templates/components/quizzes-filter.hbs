@@ -1,0 +1,10 @@
+<div class="tys-quizzes-filter">
+   <div class="tys-quizzes-filter-category">
+      <div class="tys-quizzes-filter-header">Категория</div>
+      {{#each categoryes as |category|}}
+         <div class="tys-quizzes-filter-category-item text-shortcut{{if category.active ' hightlighted'}}" {{ action 'setCategory' category.id }}>{{ category.title }}</div>
+      {{/each}}
+   </div>
+   <div class="tys-quizzes-filter-clear" {{ action 'setCategory' }}>Очистить</div>
+</div>
+{{yield results}}

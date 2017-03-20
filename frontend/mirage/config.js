@@ -1,7 +1,7 @@
 export default function() {
    this.namespace = '/api/v1/';
    let data = [{
-      type: 'questionnairies',
+      type: 'quizzes',
       id: '1',
       attributes: {
          title: 'На знание World of Warcraft',
@@ -10,7 +10,7 @@ export default function() {
          description: 'На 100% не пройден еще ни разу'
       }
    }, {
-      type: 'questionnairies',
+      type: 'quizzes',
       id: '2',
       attributes: {
          title: 'Угадай кошачьего по фото!',
@@ -19,7 +19,7 @@ export default function() {
          description: 'Легкий, развлекательный тест'
       }
    }, {
-      type: 'questionnairies',
+      type: 'quizzes',
       id: '3',
       attributes: {
          title: 'Чилийские леса полны опасностей',
@@ -28,7 +28,7 @@ export default function() {
          description: 'Ищем истину в слухах и домыслах'
       }
    }, {
-      type: 'questionnairies',
+      type: 'quizzes',
       id: '4',
       attributes: {
          title: 'World of tanks: заурядная игра или народный феномен?',
@@ -37,7 +37,7 @@ export default function() {
          description: 'Выясняем мнение населения о популярной игре'
       }
    },{
-      type: 'questionnairies',
+      type: 'quizzes',
       id: '5',
       attributes: {
          title: 'АЗАЗАЗАЗ',
@@ -46,7 +46,7 @@ export default function() {
          description: 'Неадекватный тест'
       }
    }, {
-      type: 'questionnairies',
+      type: 'quizzes',
       id: '6',
       attributes: {
          title: 'Вулканы мира',
@@ -55,7 +55,7 @@ export default function() {
          description: 'Много ли вы знаете о настоящей мощи природы?'
       }
    }, {
-      type: 'questionnairies',
+      type: 'quizzes',
       id: '7',
       attributes: {
          title: 'Начальный уровнь Lineage 2',
@@ -64,7 +64,7 @@ export default function() {
          description: 'Тест базовых знаний'
       }
    }, {
-      type: 'questionnairies',
+      type: 'quizzes',
       id: '8',
       attributes: {
          title: 'Тестик про сумерки!!',
@@ -73,7 +73,7 @@ export default function() {
          description: 'Невообразимо прекрасный тест, обязательно к прохождению'
       }
    }, {
-      type: 'questionnairies',
+      type: 'quizzes',
       id: '9',
       attributes: {
          title: 'Давай пробни',
@@ -82,7 +82,7 @@ export default function() {
          description: 'Нереальный тест, непроходимый прям'
       }
    }, {
-      type: 'questionnairies',
+      type: 'quizzes',
       id: '10',
       attributes: {
          title: 'Готическая Барселона',
@@ -91,7 +91,7 @@ export default function() {
          description: 'Серия тестов о выживании в Европе'
       }
    }];
-   this.get('/questionnairies', function(db, request) {
+   this.get('/quizzes', function(db, request) {
       if(request.queryParams.categoryid !== undefined) {
          let filteredData = data.filter(function(item) {
             return item.attributes.categoryid == request.queryParams.categoryid;
