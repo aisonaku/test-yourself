@@ -6,4 +6,6 @@ class Api::V1::CategoriesController < ActionController::Base
   def show
     render json: Category.find(params[:id])
   end
+
+ 
 end
