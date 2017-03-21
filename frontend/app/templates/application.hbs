@@ -8,4 +8,8 @@
       </div>
    </div>
    <div class="tys-body">{{outlet}}</div>
+   <div class="tys-modal-dialogs">
+      {{ outlet 'modals' }}
+      <span class="tys-modal-close" {{ action 'closeModal' }}>X</span>
+   </div>
 </div>
