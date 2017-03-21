@@ -7,6 +7,38 @@ body {
    color: #6f5f8e;
 }
 
+.tys-modal-dialogs > div {
+   position: fixed;
+}
+
+.tys-modal-dialogs > div:after {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   content: '';
+   top: 0px;
+   left: 0px;
+   background-color: rgba(1, 1, 1, 0.6);
+}
+
+.tys-modal-close {
+   display: none;
+}
+
+div + .tys-modal-close {
+   display: block;
+   position: fixed;
+   top: 20px;
+   right: 20px;
+   font-size: 50px;
+   color: #fff;
+   cursor: pointer;
+}
+
+.tys-modal-close:hover {
+   color: #de6f1b;
+}
+
 .tys-button {
    background-color: #fff;
    cursor: pointer;
