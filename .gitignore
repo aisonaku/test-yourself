@@ -1,6 +1,6 @@
-/test-yourself-api/log
-/test-yourself-api/tmp
-/test-yourself-api/db/*.sqlite3
-/test-yourself-api/db/*.sqlite3-journal
-/test-yourself-api/public/system
-/test-yourself-api/coverage/
+/backend/log
+/backend/tmp
+/backend/db/*.sqlite3
+/backend/db/*.sqlite3-journal
+/backend/public/system
+/backend/coverage/
