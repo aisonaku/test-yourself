@@ -240,7 +240,7 @@ export default function() {
    this.get('/quizzes', function(db, request) {
       if(request.queryParams.categoryid !== undefined) {
          let filteredData = data.filter(function(item) {
-            return item.attributes.category.data.id == request.queryParams.categoryid;
+            return item.attributes.category.data.id === request.queryParams.categoryid;
          });
          return {
             data: filteredData
