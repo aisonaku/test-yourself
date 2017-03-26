@@ -2,9 +2,10 @@
    <div class="tys-header">
       <div class="tys-header-logo"><p>TYS</p></div>
       <div class="tys-header-buttons">
-         <a href="">Все тесты</a>
-         <a href="">Профиль</a>
-         <a href="">Выход</a>
+         {{#link-to 'quizzes' class="button"}}Все тесты{{/link-to}}
+         {{#link-to 'profile' class="button"}}Профиль{{/link-to}}
+
+         {{#link-to 'quizzes' class="button"}}Выход{{/link-to}}
       </div>
    </div>
    <div class="tys-body">{{outlet}}</div>
