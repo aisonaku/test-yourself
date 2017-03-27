@@ -14,8 +14,8 @@ class Api::V1::QuizzesController < ApplicationController
   end
 
   def set_category
-    if params[:categoryid].present?
-      @category = Category.find(params[:categoryid])
+    if params[:category_id].present?
+      @category = Category.find(params[:category_id])
     end
   end
 end
