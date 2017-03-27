@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :categories, only: [:index, :show]
       resources :quizzes, only: [:index, :show] do
         resources :questions, only: [:index, :show]
+        resources :results, only: [:index]
       end
     end
   end

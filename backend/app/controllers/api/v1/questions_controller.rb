@@ -1,4 +1,4 @@
-class Api::V1::QuestionsController < ActionController::Base
+class Api::V1::QuestionsController < ApplicationController
   before_action :set_quiz
 
   def index

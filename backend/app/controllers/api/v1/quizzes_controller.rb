@@ -1,13 +1,13 @@
-class Api::V1::QuizzesController < ActionController::Base
+class Api::V1::QuizzesController < ApplicationController
   before_action :set_category
+
   def index
     if @category
-      render json: @category.quizzes 
+      render json: @category.quizzes
     else 
       render json: Quiz.all, include: 'quizzes'
     end
   end
-
 
   def show
     render json: Quiz.find(params[:id])
@@ -18,5 +18,4 @@ class Api::V1::QuizzesController < ActionController::Base
       @category = Category.find(params[:categoryid])
     end
   end
-  
 end

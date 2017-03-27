@@ -1,4 +1,4 @@
-class Api::V1::CategoriesController < ActionController::Base
+class Api::V1::CategoriesController < ApplicationController
   def index
 		render json: Category.all
 	end
@@ -6,6 +6,4 @@ class Api::V1::CategoriesController < ActionController::Base
   def show
     render json: Category.find(params[:id])
   end
-
- 
 end
