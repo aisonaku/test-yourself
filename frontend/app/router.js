@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('quizzes');
   this.route('profile');
   this.route('userProfile');
+  this.route('questions');
 });
 
 export default Router;

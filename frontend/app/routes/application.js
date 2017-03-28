@@ -2,16 +2,21 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
    actions: {
-      openModal: function(modalName) {
-         return this.render(modalName, {
+      openQuestion: function(quizId) {
+         this.get('store').set('currentQuizId', quizId);
+         return this.render('questions', {
             into: 'application',
-            outlet: 'modals',
-            lol: true,
-            model: {
-               lol: true
-            }
+            outlet: 'questions'
          });
       },
+
+      closeQuestion: function() {
+         return this.disconnectOutlet({
+            outlet: 'questions',
+            parentView: 'application'
+         });
+      },
+
       closeModal: function() {
          return this.disconnectOutlet({
             outlet: 'modals',

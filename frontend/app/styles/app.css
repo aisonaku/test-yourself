@@ -11,7 +11,7 @@ body {
    position: fixed;
 }
 
-.tys-modal-dialogs > div:after {
+.tys-modal-dialogs > div:sbefore {
    position: fixed;
    width: 100%;
    height: 100%;
@@ -102,11 +102,14 @@ div + .tys-modal-close {
 }
 
 .tys-header-logo {
-   width: 70px;
    height: 50px;
    background-color: #6f5f8e;
    text-align: center;
    color: #fff;
+}
+
+.tys-header-logo img {
+   height: 100%;
 }
 
 .tys-header-buttons > * {
@@ -134,6 +137,10 @@ div + .tys-modal-close {
    padding: 8px;
 }
 
+.tys-quizzes-item + .tys-quizzes-item {
+   padding-top: 35px;
+}
+
 .tys-quizzes-description-button {
    width: 100%;
 }
@@ -145,4 +152,81 @@ div + .tys-modal-close {
 .tys-quizzes-title {
    font-size: 20px;
    text-decoration: underline;
+}
+
+.tys-questions-wrapper {
+   position: fixed;
+   top: 0px;
+   right: 0px;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(1, 1, 1, 0.6);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.tys-questions-view {
+   background-color: #fff;
+   overflow: hidden;
+   width: 60vw;
+   max-height: 400px;
+}
+
+.tys-question {
+   padding: 16px;
+}
+
+.tys-question + .tys-question {
+    display: none;
+}
+
+.tys-question-text {
+   text-align: justify;
+   font-size: 20px;
+}
+
+.tys-question-answers {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.tys-question-answers-item {
+   border: 1px solid #ccc;
+   border-radius: 8px;
+   width: 27vw;
+   height: 12vh;
+   font-size: 20px;
+   margin: 2vh 0 2vh 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.tys-question-results {
+   padding: 5vh 10vh 10vh 5vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.tys-question-results-title {
+   font-size: 30px;
+}
+
+.tys-question-results-body {
+   font-size: 38px;
+   margin-top: 50px;
+   text-align: center;
+}
+
+.tys-question-ok {
+   height: 40px;
+   width: 100px;
+   display: flex;
+   margin-top: 25px;
+   justify-content: center;
+   align-items: center;
+   font-size: 30px;
 }
