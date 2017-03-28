@@ -1,0 +1,34 @@
+{{#questions-wrapper
+   close=(action 'close')
+   getResult=(action 'getResultForCurrentQuiz')
+   getQuestions=(action 'getQuestionsForCurrentQuiz') as |dataSet|
+}}
+   {{#if dataSet.isFinished}}
+      <div class="tys-question-results">
+         <div class="tys-question-results-title">Ваш результат</div>
+         <div class="tys-question-results-body">{{ dataSet.userScore }}</div>
+         <div class="tys-question-ok tys-button text-shortcut" {{ action 'close' }}>ОК</div>
+      </div>
+   {{else}}
+      {{#each dataSet.data as |question|}}
+         <div class="tys-question">
+            <div class="tys-question-head">
+               <div class="tys-question-text" title="{{ question.text }}">{{ question.text }}</div>
+            </div>
+            <div class="tys-question-body">
+               <div class="tys-question-answers">
+                  {{#each question.answersArray as |answer| }}
+                     <div class="tys-question-answers-item tys-button text-shortcut"
+                        title="{{ answer.value }}"
+                        {{ action dataSet.callback answer.id }}>
+                           <p>{{ answer.value }}</p>
+                     </div>
+                  {{/each}}
+               </div>
+            </div>
+         </div>
+      {{/each}}
+   {{/if}}
+{{/questions-wrapper}}
+
+{{outlet}}

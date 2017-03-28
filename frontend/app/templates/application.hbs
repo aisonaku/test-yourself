@@ -1,14 +1,16 @@
 <div class="tys-wrapper">
    <div class="tys-header">
-      <div class="tys-header-logo"><p>TYS</p></div>
+      <div class="tys-header-logo">
+         <img src="/assets/images/logo.jpg">
+      </div>
       <div class="tys-header-buttons">
          {{#link-to 'quizzes' class="button"}}Все тесты{{/link-to}}
          {{#link-to 'userProfile' class="button"}}Профиль{{/link-to}}
-
          {{#link-to 'quizzes' class="button"}}Выход{{/link-to}}
       </div>
    </div>
-   <div class="tys-body">{{outlet}}</div>
+   <div class="tys-body">{{ outlet }}</div>
+   {{ outlet 'questions' }}
    <div class="tys-modal-dialogs">
       {{ outlet 'modals' }}
       <span class="tys-modal-close" {{ action 'closeModal' }}>X</span>

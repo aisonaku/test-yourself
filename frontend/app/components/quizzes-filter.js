@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
    init: function() {
       this._super(...arguments);
-      this.get('filter')('').then((results) => {
+      this.get('filter')('').then(results => {
          return this.set('results', results);
       });
       this.get('categoryes')().then(res => {

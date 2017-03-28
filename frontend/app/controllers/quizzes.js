@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
       filterByCategory: function(categoryId) {
          if(categoryId !== '') {
             return this.get('store').query('quiz', {
-               categoryid: categoryId
+               category_id: categoryId
             });
          } else {
             return this.get('store').findAll('quiz');
