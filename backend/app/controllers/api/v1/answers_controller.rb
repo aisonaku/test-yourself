@@ -8,6 +8,7 @@ class Api::V1::AnswersController < ApplicationController
   private
   
   def set_answer
+
     parsed = ActiveModelSerializers::Deserialization.jsonapi_parse(params, only: [:id])
     @answer = Answer.find(parsed[:id])  
   end

@@ -20,10 +20,11 @@ export default Ember.Controller.extend({
 
       applyAnswer: function(answerId, callback) {
          let template = {
-            data: {
-               id: answerId,
-               type: 'answer'
-            }
+               data: 
+               {
+                  id: answerId,
+                  type: 'answer'
+               }            
          },
          toSendData = JSON.stringify(template);
          $.ajax({

@@ -11,7 +11,7 @@ class Result
   end
 
   # hacks for serializer
-  def id; end
+  def id; 1 end
   def read_attribute_for_serialization(name)
     send(name)
   end
