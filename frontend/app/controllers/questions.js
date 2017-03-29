@@ -24,12 +24,11 @@ export default Ember.Controller.extend({
                id: answerId,
                type: 'answer'
             }
-         },
-         toSendData = JSON.stringify(template);
+         };
          $.ajax({
             url: '/api/v1/answers',
             type: 'POST',
-            data: toSendData,
+            data: template,
             success: callback,
             dataType: 'json'
          });
