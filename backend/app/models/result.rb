@@ -25,6 +25,6 @@ class Result
         .joins('JOIN quizzes ON quizzes.id = questions.quiz_id')
         .where('quizzes.id = ?', quiz.id)
         .where(answers: { is_correct: true })
-        .count / 10.0
+        .count * 10.0
   end
 end
