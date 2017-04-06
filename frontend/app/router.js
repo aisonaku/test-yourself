@@ -9,8 +9,9 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('quizzes');
   this.route('profile');
-  this.route('userProfile');
   this.route('questions');
+  this.route('userProfile');
+  
 });
 
 export default Router;

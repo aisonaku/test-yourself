@@ -89,6 +89,11 @@ div + .tys-modal-close {
    border-top: none;
 }
 
+.tys-profile-item {
+    padding: 8px;
+}
+
+
 .tys-header {
    height: 50px;
    width: 100%;

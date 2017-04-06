@@ -1,9 +1,18 @@
+
 <div class="tys-quizzes">
-  <div class="right tomster"></div>
-  <h2>About Super Rentals</h2>
-  <p>
-    The Super Rentals website is a delightful project created to explore Ember.
-    By building a property rental site, we can simultaneously imagine traveling
-    AND building Ember applications.
-  </p>
+      {{#each (action 'filterAnswerByUser') as |answer|}}
+         <div class="tys-profile-item">
+            <div class="tys-profile-title text-shortcut" title="{{ answer.title }}">{{ answer.title }}</div>
+			<div class="tys-quizzes-description text-shortcut" title="{{ answer.calculate }}">{{ answer.calculate }}</div>
+			</div>
+      {{/each}}
+
+      {{#each (action 'filterByCategory') as |quest|}}
+         <div class="tys-quizzes-item">
+            <div class="tys-quizzes-title text-shortcut" title="{{ quest.title }}">{{ quest.title }}</div>
+            <div class="tys-quizzes-category text-shortcut" title="{{ quest.category-title }}">{{ quest.categorytitle }}</div>
+            <div class="tys-quizzes-description text-shortcut" title="{{ quest.description }}">{{ quest.description }}</div>
+            <button class="tys-quizzes-description-button tys-button normal" {{ action 'openQuestion' quest.id }}>Начать тест</button>
+         </div>
+      {{/each}}
 </div>
