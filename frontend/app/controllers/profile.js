@@ -2,10 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
    actions: {
-      filterAnswerByUser: function(userId) {
+      filterAnswerByUser: function(userId=1) {
          if(userId !== '') {
             return this.get('store').query('user_answer', {
-               user_id: userId
+               user_id: 1
             });
          } 
       },
@@ -16,9 +16,10 @@ export default Ember.Controller.extend({
             quiz_id: currentQId
          });
       },
-      getUser: function(userId) {
+      getUser: function() {
+		  currentQId = store.get('id');
          return this.get('store').query('user', {
-               id: userId
+               id: currentQId
             });
       },
 	  filterByCategory: function(categoryId) {
