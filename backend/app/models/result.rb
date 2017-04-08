@@ -2,9 +2,13 @@ class Result < ApplicationRecord
   belongs_to :quiz
   belongs_to :user
 
-  before_validation -> { self.value = calculate }
+  before_validation :set_value
 
   private
+
+  def set_value
+    self.value = calculate
+  end
 
 	def calculate
     user.user_answers
