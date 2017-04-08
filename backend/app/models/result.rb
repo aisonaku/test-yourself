@@ -1,22 +1,14 @@
-class Result
-  attr_reader :user, :quiz
+class Result < ApplicationRecord
+  belongs_to :quiz
+  belongs_to :user
 
-  def initialize(user:, quiz:)
-    @user = user
-    @quiz = quiz
-  end
-
-  def value
-    @value ||= calculate
-  end
-
-  # hacks for serializer
-  def id; 1 end
-  def read_attribute_for_serialization(name)
-    send(name)
-  end
+  before_validation :set_value
 
   private
+
+  def set_value
+    self.value = calculate
+  end
 
 	def calculate
     user.user_answers
