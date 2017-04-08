@@ -17,9 +17,10 @@ export default Ember.Controller.extend({
          });
       },
       getUser: function() {
+		  logger.log("Hello");
 		  currentQId = store.get('id');
          return this.get('store').query('user', {
-               id: currentQId
+               id: 1
             });
       },
 	  filterByCategory: function(categoryId) {

@@ -1,7 +1,7 @@
 <div class="tys-quizzes">
 
 <div class="tys-question-results-title">Your profile</div>
-         <div class="tys-question-results-body" {{action 'getUser'}} as |user|>UserName</div>
+         <div class="tys-question-results-body" (action 'getUser') as |user|>{{user.name}}</div>
       {{#each (action 'filterAnswerByUser') as |answer|}}
          <div class="tys-profile-item">
             <div class="tys-profile-title text-shortcut" title="{{ answer.title }}">{{ answer.title }}</div>
