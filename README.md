@@ -1,13 +1,13 @@
 # test-yourself
 
-### Run
+### Run frontend (development)
 
 ```
 cd frontend
 ember server --proxy https://fathomless-tundra-61665.herokuapp.com
 ```
 
-### Build
+### Build frontend (production)
 
 ```
 cd frontend
