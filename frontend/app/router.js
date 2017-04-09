@@ -14,4 +14,8 @@ Router.map(function() {
   
 });
 
+Router.reopen({
+  location: 'hash'
+});
+
 export default Router;
