@@ -6,3 +6,7 @@
 /backend/coverage/
 /backend/.bundle/
 /backend/.gitignore
+/backend/app/assets/javascripts/tys.js
+/backend/app/assets/javascripts/vendor.js
+/backend/app/assets/stylesheets/tys.css
+/backend/app/assets/stylesheets/vendor.css
