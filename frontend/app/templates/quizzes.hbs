@@ -5,7 +5,9 @@
             <div class="tys-quizzes-title text-shortcut" title="{{ quest.title }}">{{ quest.title }}</div>
             <div class="tys-quizzes-category text-shortcut" title="{{ quest.category-title }}">{{ quest.categorytitle }}</div>
             <div class="tys-quizzes-description text-shortcut" title="{{ quest.description }}">{{ quest.description }}</div>
-            <button class="tys-quizzes-description-button tys-button normal" {{ action 'openQuestion' quest.id }}>Начать тест</button>
+            
+			<button {{ action 'openQuestion' quest.id }} class="tys-quizzes-description-button tys-button normal">Начать тест</button>
+			
          </div>
       {{/each}}
    {{/quizzes-filter}}

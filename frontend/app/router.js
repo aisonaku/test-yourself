@@ -11,7 +11,9 @@ Router.map(function() {
   this.route('profile');
   this.route('questions');
   this.route('userProfile');
-  
+
+  this.route('quiz',{ path: '/quizzes/:quiz_id'});
+  this.route('category',{ path: '/category/:category_id'});
 });
 
 export default Router;

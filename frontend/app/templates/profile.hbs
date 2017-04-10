@@ -1,22 +1,19 @@
 <div class="tys-quizzes">
 
-<div class="tys-question-results-title">Your profile</div>
-         <div class="tys-question-results-body" {{action 'getUser'}} as |user|>{{user.name}}</div>
-      {{#each (action 'filterAnswerByUser') as |answer|}}
-         <div class="tys-profile-item">
-            <div class="tys-profile-title text-shortcut" title="{{ answer.title }}">{{ answer.title }}</div>
-			<div class="tys-quizzes-description text-shortcut" title="{{ answer.calculate }}">{{ answer.calculate }}</div>
-			</div>
-      {{/each}}
-
-      {{#quizzes-filter categoryes=(action 'getAllCategoryes') filter=(action 'filterByCategory') as |quizzes|}}
-      {{#each quizzes as |quest|}}
+<div class="tys-quizzes-title text-shortcut" {{action 'getUser'}}>Your profile</div>
+{{#each model as |user|}}
+         <div class="tys-question-results-title" {{action 'getUser'}} as |user|>{{user.name}}</div>
+		 {{/each}}
+		 
+	  
+      {{#list-filter filter=(action 'getResultForQuiz' model.id) as |answers|}}
+      {{#each answers as |answer|}}
+	  {{#quiz-filter filter=(action 'getQuiz' answer.id) as |quiz|}}
          <div class="tys-quizzes-item">
-            <div class="tys-quizzes-title text-shortcut" title="{{ quest.title }}">{{ quest.title }}</div>
-            <div class="tys-quizzes-category text-shortcut" title="{{ quest.category-title }}">{{ quest.categorytitle }}</div>
-            <div class="tys-quizzes-description text-shortcut" title="{{ quest.description }}">{{ quest.description }}</div>
-            <button class="tys-quizzes-description-button tys-button normal" {{ action 'openQuestion' quest.id }}>Начать тест</button>
+		 <div class="tys-question-results-title" title="{{ quiz.title }}">{{ quiz.title }}</div>
+            <div class="tys-quizzes-title text-shortcut" title="{{ answer.title }}">{{ answer.value }} %</div>
          </div>
+		 {{/quiz-filter}}
       {{/each}}
-   {{/quizzes-filter}}
+   {{/list-filter}}
 </div>

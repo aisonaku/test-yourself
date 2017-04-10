@@ -4,23 +4,27 @@ export default Ember.Controller.extend({
    actions: {
       filterAnswerByUser: function(userId=1) {
          if(userId !== '') {
-            return this.get('store').query('user_answer', {
+            return this.get('store').query('user_answers', {
                user_id: 1
             });
          } 
       },
-	  getResultForQuiz: function() {
-         let store = this.get('store'),
-            currentQId = store.get('currentQuizId');
-         return store.queryRecord('result', {
-            quiz_id: currentQId
-         });
+	  getResultForQuiz: function(userId=1) {
+         return this.get('store').query('result', {
+               user_id: 1
+            });
       },
       getUser: function() {
 		  logger.log("Hello");
-		  currentQId = store.get('id');
-         return this.get('store').query('user', {
+		  currentQId = this.get('store').query('users', {
                id: 1
+            });
+			alert(currentQId);
+         return currentQId;
+      },
+	  getQuiz: function(id) {
+		  return this.get('store').query('quiz', {
+               quiz_id: id
             });
       },
 	  filterByCategory: function(categoryId) {
