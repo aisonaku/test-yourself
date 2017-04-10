@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'status', to: 'pages#status' 
+  get '/:page', to: 'pages#index', constraints: { page: /.*/ }
 
   root 'pages#index'
 end

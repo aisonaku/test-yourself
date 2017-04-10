@@ -1,8 +1,11 @@
 class ApplicationController < ActionController::Base
   serialization_scope :current_user
 
-  attr_reader :current_user
+  # attr_reader :current_user
 
+  def current_user
+    User.first
+  end
   # before_action :authenticate!
 
   def authenticate!
