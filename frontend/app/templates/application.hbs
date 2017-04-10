@@ -4,9 +4,13 @@
          <img src="/assets/images/logo.jpg">
       </div>
       <div class="tys-header-buttons">
-         {{#link-to 'quizzes' class="button"}}Все тесты{{/link-to}}
-         {{#link-to 'profile' class="button"}}Профиль{{/link-to}}
-         {{#link-to 'quizzes' class="button"}}Выход{{/link-to}}
+         {{#if session.isAuthenticated}}
+            {{#link-to 'quizzes' class="button"}}Все тесты{{/link-to}}
+            {{#link-to 'profile' class="button"}}Профиль{{/link-to}}
+            <a {{action 'invalidateSession'}} href="#">Выход</a>
+         {{else}}
+            {{#link-to 'auth'}}О сервисе{{/link-to}}
+         {{/if}}
       </div>
    </div>
    <div class="tys-body">{{ outlet }}</div>

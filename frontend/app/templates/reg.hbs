@@ -1,0 +1,28 @@
+<div class="tys-auth">
+   <div class="tys-auth-wrapper">
+      <div class="tys-auth-title">Test Yourself</div>
+      <div class="tys-auth-sub-title">Создать новый аккаунт</div>
+      <form {{action 'signup' on='submit'}}>
+         <div class="tys-auth-name">
+            <label for="identification">Имя пользователя</label>
+            {{input id='identification' placeholder='Имя пользователя' value=identification}}
+         </div>
+         <div class="tys-auth-pass">
+            <label for="password">Пароль</label>
+            {{input id='password' placeholder='Пароль' type='password' value=password}}
+         </div>
+         <div class="tys-auth-pass">
+            <label for="checkPassword">Подтверждение пароля</label>
+            {{input id='checkPassword' placeholder='Пароль' type='password' value=checkPassword}}
+         </div>
+         <button class="tys-auth-submit tys-button" type="submit">Регистрация</button>
+         {{#if errorMessage}}
+            <p>{{errorMessage}}</p>
+         {{/if}}
+      </form>
+      <div class="tys-sign-up-block">
+         <div class="tys-sign-up-block-title">Уже есть аккаунт?</div>
+         {{#link-to 'auth'}}Войти{{/link-to}}
+      </div>
+   </div>
+</div>

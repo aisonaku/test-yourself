@@ -305,6 +305,19 @@ export default function() {
       }
    });
    this.post('/answers', function(db, request) {});
+
+   this.post('/users/sign_in', function(db, request) {
+      return {
+         auth_token: 'ufb3fb-3fn2-u3fh3ffuy3f2u3'
+      };
+   });
+   
+   this.post('/users/sign_up', function(db, request) {
+      return {
+         auth_token: 'ufb3fb-3fn2-u3fh3ffuy3f2u3'
+      };
+   });
+
    this.get('/results', function(db, request) {
       return {
          "data":{
