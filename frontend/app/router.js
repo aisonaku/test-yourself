@@ -16,4 +16,8 @@ Router.map(function() {
   this.route('category',{ path: '/category/:category_id'});
 });
 
+Router.reopen({
+  location: 'hash'
+});
+
 export default Router;
