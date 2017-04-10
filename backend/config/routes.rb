@@ -9,8 +9,15 @@ Rails.application.routes.draw do
       resources :results,    only: [:index]
       resources :answers,    only: [:create]
       resources :users,    only: [:index]
+
+      namespace :users do
+        post 'sign_in', to: 'authentications#create' 
+        post 'sign_up', to: 'registrations#create' 
+      end
     end
   end
+
+  get 'status', to: 'pages#status' 
 
   root 'pages#index'
 end
