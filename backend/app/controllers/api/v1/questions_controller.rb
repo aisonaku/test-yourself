@@ -6,7 +6,7 @@ class Api::V1::QuestionsController < ApplicationController
     if @result.present?
       redirect_to api_v1_results_path(quiz_id: @quiz.id)
     else
-		  render json: @quiz.questions
+		  render json: choose_questions
     end
 	end
 
@@ -15,6 +15,17 @@ class Api::V1::QuestionsController < ApplicationController
   end
 
   private
+
+  def choose_questions
+    join_sql = <<-SQL
+      LEFT JOIN user_answers ON
+        user_answers.question_id = questions.id AND
+        user_answers.user_id = #{current_user.id}
+    SQL
+    not_answered = @quiz.questions.joins(join_sql).where('user_answers.id IS NULL')
+    answered_count = @quiz.questions.count - not_answered.count
+    not_answered.sample(10 - answered_count)
+  end
 
   def set_quiz
     @quiz = Quiz.find(params[:quiz_id])
