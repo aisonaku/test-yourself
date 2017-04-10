@@ -7,6 +7,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('auth');
   this.route('quizzes');
   this.route('profile');
   this.route('questions');
@@ -14,6 +15,7 @@ Router.map(function() {
 
   this.route('quiz',{ path: '/quizzes/:quiz_id'});
   this.route('category',{ path: '/category/:category_id'});
+  this.route('reg');
 });
 
 export default Router;

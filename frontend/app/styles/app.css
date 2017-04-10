@@ -39,6 +39,62 @@ div + .tys-modal-close {
    color: #de6f1b;
 }
 
+.tys-auth {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 70vh;
+}
+
+.tys-auth-wrapper {
+   width: 40vw;
+   border: 1px solid;
+   padding: 25px;
+   border-radius: 10px;
+}
+
+.tys-auth form {
+   font-size: 19px;
+}
+
+.tys-auth form input {
+   height: 23px;
+   font-size: 19px;
+   width: 200px;
+}
+
+.tys-auth-title {
+   font-size: 22px;
+}
+
+.tys-auth-sub-title {
+   margin-top: 15px;
+   font-size: 19px;
+}
+
+.tys-auth-name, .tys-auth-pass {
+   display: flex;
+   justify-content: space-between;
+   margin: 16px;
+   align-items: center;
+}
+
+.tys-auth-submit {
+   width: 140px;
+}
+
+.tys-auth-name {
+   margin-top: 40px;
+}
+
+.tys-sign-up-block {
+   margin-top: 40px;
+}
+
+.tys-sign-up-block a {
+   margin-top: 15px;
+}
+
 .tys-button {
    background-color: #fff;
    cursor: pointer;
