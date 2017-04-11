@@ -3,9 +3,6 @@ class ApplicationController < ActionController::Base
 
   attr_reader :current_user
 
-  # def current_user
-  #   User.first
-  # end
   before_action :authenticate!
 
   def authenticate!
