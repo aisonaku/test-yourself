@@ -22,13 +22,19 @@ export default Ember.Controller.extend({
          let store = this.get('store'),
             currentQId = store.get('currentQuizId');
          let constructedUrl = '/api/v1/results?quiz_id=' + currentQId;
-         alert(constructedUrl)   
-         $.ajax({
-            url: constructedUrl,
-            type: 'DELETE',
-            success: null,
-            dataType: 'json'
-         });
+
+         let callback = () => {
+            this.send('close');
+         }; 
+
+         let confirmation = confirm('Вы уверены, что хотите удалить результаты по этому тесту?');
+         if (confirmation) {
+            $.ajax({
+               url: constructedUrl,
+               type: 'DELETE',
+               success: callback
+            });
+         }
       },
 
       applyAnswer: function(answerId, callback) {
