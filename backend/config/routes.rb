@@ -6,7 +6,9 @@ Rails.application.routes.draw do
       resources :categories, only: [:index, :show]
       resources :quizzes,    only: [:index, :show]
       resources :questions,  only: [:index, :show]
-      resources :results,    only: [:index]
+      resources :results,    only: [:index] do
+        delete :destroy, on: :collection
+      end
       resources :answers,    only: [:create]
       resources :users,    only: [:index]
 

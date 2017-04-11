@@ -1,6 +1,6 @@
 class Api::V1::ResultsController < ApplicationController
   before_action :set_quiz
-
+  
   def index
     if @quiz
       @result = Result.find_by(quiz: @quiz, user: current_user)
@@ -13,6 +13,21 @@ class Api::V1::ResultsController < ApplicationController
       render json: current_user.results
     end
 	end
+
+  def destroy
+    if @quiz
+      answers = current_user.user_answers
+        .joins('JOIN questions ON questions.id = user_answers.question_id')
+        .joins('JOIN quizzes ON quizzes.id = questions.quiz_id')
+        .where('quizzes.id = ?', @quiz.id)
+      answers.destroy_all  
+      result = Result.find_by(quiz: @quiz, user: current_user)
+      result.delete
+      head 200
+    else
+      head 400
+    end
+  end
 
   def set_quiz
     if params[:quiz_id].present?
