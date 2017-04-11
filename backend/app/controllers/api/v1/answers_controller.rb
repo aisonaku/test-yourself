@@ -2,7 +2,11 @@ class Api::V1::AnswersController < ApplicationController
   before_action :set_answer
 
   def create
-    UserAnswer.create(user: current_user, answer: @answer, question: @answer.question)
+    if 
+      UserAnswer.create(user: current_user, answer: @answer, question: @answer.question)
+    else
+      head 422
+    end
   end
 
   private

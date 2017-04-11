@@ -20,14 +20,21 @@ class Api::V1::ResultsController < ApplicationController
         .joins('JOIN questions ON questions.id = user_answers.question_id')
         .joins('JOIN quizzes ON quizzes.id = questions.quiz_id')
         .where('quizzes.id = ?', @quiz.id)
-      answers.destroy_all  
+      
       result = Result.find_by(quiz: @quiz, user: current_user)
-      result.delete
+      
+      if result.present? && answers.present?       
+        answers.destroy_all  
+        result.delete
+      end
+      
       head 200
     else
       head 400
     end
   end
+
+private
 
   def set_quiz
     if params[:quiz_id].present?
