@@ -18,6 +18,19 @@ export default Ember.Controller.extend({
          });
       },
 
+      deleteResultsForQuiz: function() {
+         let store = this.get('store'),
+            currentQId = store.get('currentQuizId');
+         let constructedUrl = '/api/v1/results?quiz_id=' + currentQId;
+         alert(constructedUrl)   
+         $.ajax({
+            url: constructedUrl,
+            type: 'DELETE',
+            success: null,
+            dataType: 'json'
+         });
+      },
+
       applyAnswer: function(answerId, callback) {
          let template = {
             data: {

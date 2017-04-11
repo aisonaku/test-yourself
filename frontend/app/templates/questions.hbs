@@ -7,7 +7,7 @@
       <div class="tys-question-results">
          <div class="tys-question-results-title">Ваш результат</div>
          <div class="tys-question-results-body">{{ dataSet.userScore }}</div>
-         <div class="tys-question-ok tys-button text-shortcut" {{ action 'close' }}>ОК</div>
+         <div class="tys-question-ok tys-button text-shortcut" {{ action 'deleteResultsForQuiz' }}>Начать новую попытку</div>
       </div>
    {{else}}
       {{#each dataSet.data as |question|}}
