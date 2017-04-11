@@ -306,13 +306,17 @@ div + .tys-modal-close {
 }
 
 .tys-question-results-title {
-   font-size: 30px;
+   font-size: 25px;
 }
 
 .tys-question-results-body {
    font-size: 38px;
    margin-top: 50px;
    text-align: center;
+}
+
+.tys-question-results-percent {
+   font-size: 23px;
 }
 
 .tys-question-ok {

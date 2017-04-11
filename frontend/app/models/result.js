@@ -13,6 +13,10 @@ export default DS.Model.extend({
       return this.get('quiz.data.id');
    }), 
    stringView: Ember.computed('value', function() { 
-   return this.get('value') + '%';
-   })   
+      return this.get('value') + '%';
+   }),
+   quiz: DS.attr(),
+   title: Ember.computed('quiz', function() {
+      return this.get('quiz.data.attributes.title');
+   })
 });

@@ -1,19 +1,14 @@
 <div class="tys-quizzes">
 
-<div class="tys-quizzes-title text-shortcut" {{action 'getUser'}}>Your profile</div>
-{{#each model as |user|}}
-         <div class="tys-question-results-title">{{user.name}}</div>
-		 {{/each}}
-		 
-	  
-      {{#list-filter filter=(action 'getResultForQuiz') as |answers|}}
+<div class="tys-quizzes-title text-shortcut" {{action 'getUser'}}>Профиль</div>
+   {{#each model as |user|}}
+      <div class="tys-question-results-title">{{user.name}}</div>
+	{{/each}}
+   {{#list-filter filter=(action 'getResultForQuiz') as |answers|}}
       {{#each answers as |answer|}}
-	  
-         <div class="tys-quizzes-item">
-		 {{#quiz-filter filter=(action 'getQuiz' answer.id) as |quiz|}}
-		 <div class="tys-question-results-title" title="{{ quiz.title }}">{{ quiz.title }}</div>
-            <div class="tys-quizzes-filter-category-item text-shortcut" title="{{ answer.title }}">{{ answer.value }} %</div>
-         {{/quiz-filter}}
+       <div class="tys-quizzes-item">
+		      <div class="tys-question-results-title" title="{{ quiz.title }}">{{ answer.title }}</div>
+            <div class="tys-question-results-percent text-shortcut" title="{{ answer.title }}">{{ answer.stringView }}</div>
 		 </div>
       {{/each}}
    {{/list-filter}}
