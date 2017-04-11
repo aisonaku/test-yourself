@@ -11,5 +11,8 @@ export default DS.Model.extend({
    }),
    quiz_id: Ember.computed('quiz', function() {
       return this.get('quiz.data.id');
-   })
+   }), 
+   stringView: Ember.computed('value', function() { 
+   return this.get('value') + '%';
+   })   
 });

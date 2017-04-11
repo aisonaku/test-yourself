@@ -2,11 +2,11 @@
 
 <div class="tys-quizzes-title text-shortcut" {{action 'getUser'}}>Your profile</div>
 {{#each model as |user|}}
-         <div class="tys-question-results-title" {{action 'getUser'}} as |user|>{{user.name}}</div>
+         <div class="tys-question-results-title">{{user.name}}</div>
 		 {{/each}}
 		 
 	  
-      {{#list-filter filter=(action 'getResultForQuiz' model.id) as |answers|}}
+      {{#list-filter filter=(action 'getResultForQuiz') as |answers|}}
       {{#each answers as |answer|}}
 	  {{#quiz-filter filter=(action 'getQuiz' answer.id) as |quiz|}}
          <div class="tys-quizzes-item">
