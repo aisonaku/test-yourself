@@ -6,7 +6,7 @@ export default Ember.Component.extend({
    init: function() {
       this._super(...arguments);
       this.get('getQuestions')().then(results => {
-         this.set('dataSet', results.toArray());
+         this.set('dataSet', results.toArray && results.toArray() || []);
          let self = this,
             setResult = function(callback) {
                let data = self.get('dataSet');
@@ -16,6 +16,12 @@ export default Ember.Component.extend({
                   isFinished: !data.length,
                   callback: callback,
                   userScore: self.get('userScore')
+               });
+            },
+            getResult = function() {
+               return self.get('getResult')().then(res => {
+                  self.set('userScore', res.get('stringView'));
+                  return setResult(applyAnswer);
                });
             },
             applyAnswer = function(id) {
@@ -29,16 +35,17 @@ export default Ember.Component.extend({
                   if(fixed.length) {
                      return setResult(applyAnswer);
                   } else {
-                     return self.get('getResult')().then(res => {
-                        self.set('userScore', res.get('stringView'));
-                        return setResult(applyAnswer);
-                     });
+                     return getResult();
                   }
                };
                self.set('isBlocked', true);
                this.send('applyAnswer', id, callback);
             };
-         return setResult(applyAnswer);
+         if(results === 'qDone') {
+            return getResult();
+         } else {
+            return setResult(applyAnswer);
+         }
       });
       $('.tys-wrapper').addClass('blured');
    },

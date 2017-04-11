@@ -3,8 +3,8 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
    actions: {
-      openQuestion: function(quizId) {
-         this.get('store').set('currentQuizId', quizId);
+      openQuestion: function(quiz) {
+         this.get('store').set('currentQuiz', quiz);
          return this.render('questions', {
             into: 'application',
             outlet: 'questions'

@@ -113,6 +113,7 @@ div + .tys-modal-close {
 }
 
 .tys-button:hover {
+   border: 1px solid #fff;
    box-shadow: 0 0 10px #ccc;
 }
 
@@ -137,10 +138,15 @@ div + .tys-modal-close {
    margin-top: 8px;
 }
 
+.tys-quizzes-filter-clear:hover {
+   color: #ca8c8c;
+}
+
 .tys-quizzes-filter-category-item {
    border: 1px solid #ccc;
    padding: 4px 0 4px 0;
    cursor: pointer;
+   border-radius: 6px;
 }
 
 .tys-quizzes-filter-category-item:hover {
@@ -152,7 +158,7 @@ div + .tys-modal-close {
 }
 
 .tys-quizzes-filter-category-item + .tys-quizzes-filter-category-item {
-   border-top: none;
+   margin-top: 16px;
 }
 
 .tys-profile-item {
@@ -195,7 +201,11 @@ div + .tys-modal-close {
 .tys-quizzes {
    display: inline-block;
    padding-top: 30px;
-   width: 300px;
+   width: 32vw;
+}
+
+.tys-quizzes-item-done {
+   height: 23px;
 }
 
 .text-shortcut {
@@ -223,6 +233,8 @@ div + .tys-modal-close {
 .tys-quizzes-title {
    font-size: 20px;
    text-decoration: underline;
+   display: inline-block;
+   max-width: 27vw;
 }
 
 .tys-questions-wrapper {
@@ -305,8 +317,8 @@ div + .tys-modal-close {
 
 .tys-question-ok {
    height: 40px;
-   width: 100px;
    display: flex;
+   padding: 10px;
    margin-top: 25px;
    justify-content: center;
    align-items: center;
