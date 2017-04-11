@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
          let { identification, password, checkPassword } = this.getProperties('identification', 'password', 'checkPassword');
          if((password && (password === checkPassword)) && identification) {
             let rawData = {
-               user: identification,
+               name: identification,
                password: password,
                confirmation_password: password
             };

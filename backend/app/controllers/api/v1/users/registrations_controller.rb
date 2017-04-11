@@ -1,5 +1,5 @@
 class Api::V1::Users::RegistrationsController < ApplicationController
-  # skip_before_action :authenticate!
+  skip_before_action :authenticate!
 
   def create
     if params[:confirmation_password] == params[:password] 
