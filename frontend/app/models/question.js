@@ -4,7 +4,7 @@ import Ember from 'ember';
 export default DS.Model.extend({
    text: DS.attr(),
    answers: DS.attr(),
-   answersTop: Ember.computed('category', function() {
+   answersLeft: Ember.computed('category', function() {
       let arr = this.get('answers.data').map((item, index) => {
          return {
             id: item.id,
@@ -13,7 +13,7 @@ export default DS.Model.extend({
       }).splice(0, 2);
       return arr;
    }),
-   answersBottom: Ember.computed('category', function() {
+   answersRight: Ember.computed('category', function() {
       let arr = this.get('answers.data').map((item, index) => {
          return {
             id: item.id,

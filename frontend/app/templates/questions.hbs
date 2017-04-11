@@ -18,14 +18,14 @@
             <div class="tys-question-body">
                <div class="tys-question-answers">
                   <div class="tys-question-answers-left">
-                     {{#each question.answersTop as |answer| }}
+                     {{#each question.answersLeft as |answer| }}
                         <div class="tys-question-answers-item tys-button text-shortcut answer-{{ answer.count }}" title="{{ answer.value }}" {{ action dataSet.callback answer.id }}>
                            {{ answer.value }}
                         </div>
                      {{/each}}
                   </div>
                   <div class="tys-question-answers-right">
-                     {{#each question.answersBottom as |answer| }}
+                     {{#each question.answersRight as |answer| }}
                         <div class="tys-question-answers-item tys-button text-shortcut answer-{{ answer.count }}" title="{{ answer.value }}" {{ action dataSet.callback answer.id }}>
                            {{ answer.value }}
                         </div>
