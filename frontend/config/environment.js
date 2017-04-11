@@ -31,7 +31,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
   ENV['ember-simple-auth'] = {
-    authenticationRoute: 'auth'
+    authenticationRoute: 'auth',
+    authorizer: 'authorizer:token'
   };
   if (environment === 'test') {
     // Testem prefers this...
