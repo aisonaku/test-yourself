@@ -4,15 +4,21 @@ export default Ember.Controller.extend({
    actions: {
       getQuestionsForCurrentQuiz: function() {
          let store = this.get('store'),
-            currentQId = store.get('currentQuizId');
-         return store.query('question', {
-            quiz_id: currentQId
-         });
+            currentItem = store.get('currentQuiz'),
+            currentQId = currentItem.get('id'),
+            isCompleted = currentItem.get('completed');
+         if(isCompleted) {
+            return Promise.resolve('qDone');
+         } else {
+            return store.query('question', {
+               quiz_id: currentQId
+            });
+         }
       },
 
       getResultForCurrentQuiz: function() {
          let store = this.get('store'),
-            currentQId = store.get('currentQuizId');
+            currentQId = store.get('currentQuiz').get('id');
          return store.queryRecord('result', {
             quiz_id: currentQId
          });
@@ -20,11 +26,12 @@ export default Ember.Controller.extend({
 
       deleteResultsForQuiz: function() {
          let store = this.get('store'),
-            currentQId = store.get('currentQuizId');
+            currentQId = store.get('currentQuiz').get('id');
          let constructedUrl = '/api/v1/results?quiz_id=' + currentQId;
 
          let callback = () => {
-            this.send('close');
+            this.send('closeQuestion');
+            $('.tys-wrapper').removeClass('blured');
          }; 
 
          let confirmation = confirm('Вы уверены, что хотите удалить результаты по этому тесту?');

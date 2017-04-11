@@ -2,12 +2,13 @@
    {{#quizzes-filter categoryes=(action 'getAllCategoryes') filter=(action 'filterByCategory') as |quizzes|}}
       {{#each quizzes as |quest|}}
          <div class="tys-quizzes-item">
+            {{#if quest.completed }}
+               <img class="tys-quizzes-item-done" src="/assets/images/done.png">
+            {{/if}}
             <div class="tys-quizzes-title text-shortcut" title="{{ quest.title }}">{{ quest.title }}</div>
             <div class="tys-quizzes-category text-shortcut" title="{{ quest.category-title }}">{{ quest.categorytitle }}</div>
             <div class="tys-quizzes-description text-shortcut" title="{{ quest.description }}">{{ quest.description }}</div>
-            
-			<button {{ action 'openQuestion' quest.id }} class="tys-quizzes-description-button tys-button normal">Начать тест</button>
-			
+            <button {{ action 'openQuestion' quest }} class="tys-quizzes-description-button tys-button normal">{{#if quest.completed }}Смотреть результаты{{else}}Начать тест{{/if}}</button>
          </div>
       {{/each}}
    {{/quizzes-filter}}
