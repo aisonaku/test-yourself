@@ -17,13 +17,20 @@
             </div>
             <div class="tys-question-body">
                <div class="tys-question-answers">
-                  {{#each question.answersArray as |answer| }}
-                     <div class="tys-question-answers-item tys-button text-shortcut"
-                        title="{{ answer.value }}"
-                        {{ action dataSet.callback answer.id }}>
-                           <p>{{ answer.value }}</p>
-                     </div>
-                  {{/each}}
+                  <div class="tys-question-answers-left">
+                     {{#each question.answersLeft as |answer| }}
+                        <div class="tys-question-answers-item tys-button text-shortcut answer-{{ answer.count }}" title="{{ answer.value }}" {{ action dataSet.callback answer.id }}>
+                           {{ answer.value }}
+                        </div>
+                     {{/each}}
+                  </div>
+                  <div class="tys-question-answers-right">
+                     {{#each question.answersRight as |answer| }}
+                        <div class="tys-question-answers-item tys-button text-shortcut answer-{{ answer.count }}" title="{{ answer.value }}" {{ action dataSet.callback answer.id }}>
+                           {{ answer.value }}
+                        </div>
+                     {{/each}}
+                  </div>
                </div>
             </div>
          </div>

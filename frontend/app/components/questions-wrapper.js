@@ -40,9 +40,11 @@ export default Ember.Component.extend({
             };
          return setResult(applyAnswer);
       });
+      $('.tys-wrapper').addClass('blured');
    },
    actions: {
       close: function() {
+         $('.tys-wrapper').removeClass('blured');
          return this.get('close')();
       }
    }
