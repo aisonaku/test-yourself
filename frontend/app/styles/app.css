@@ -206,6 +206,7 @@ div + .tys-modal-close {
 
 .tys-quizzes-item-done {
    height: 23px;
+   margin-top: 0px;
 }
 
 .text-shortcut {
