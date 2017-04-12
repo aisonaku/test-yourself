@@ -1,4 +1,5 @@
 import Ember from 'ember';
+const { $ } = Ember;
 
 export default Ember.Controller.extend({
    actions: {
@@ -16,6 +17,20 @@ export default Ember.Controller.extend({
 		  return this.get('store').query('quiz', {
                quiz_id: id
             });
+      },
+
+      deleteResultsForQuiz: function(id) {
+         if(confirm('Вы уверены, что хотите удалить результаты по этому тесту?')) {
+            $.ajax({
+               url: '/api/v1/results?quiz_id=' + id,
+               type: 'DELETE',
+               success: () => {
+                  this.send('getResultForQuiz');
+                  this.container.reset();
+                  this.transitionToRoute('profile');
+               }
+            });
+         }
       }
    }
 });

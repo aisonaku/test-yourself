@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
    actions: {
       signup() {
          let { identification, password, checkPassword } = this.getProperties('identification', 'password', 'checkPassword');
+         this.set('errorMessage', '');
          if((password && (password === checkPassword)) && identification) {
             let rawData = {
                name: identification,
@@ -24,16 +25,28 @@ export default Ember.Controller.extend({
                      if(json.auth_token) {
                         this.transitionToRoute('auth');
                      } else {
-                        window.alert('TODO! REGISTRATION ERROR');
+                        this.set('errorMessage', 'Непредвиденная ошибка');
                      }
                   });
                } else {
-                  window.alert('TODO! REGISTRATION ERROR');
+                  this.set('errorMessage', 'Имя пользователя занято');
                }
+            }).catch(reason => {
+               this.set('errorMessage', reason.error || reason);
             });
          } else {
-            window.alert('TODO! VALIDATION ERROR');
+            if(!identification && !password) {
+               this.set('errorMessage', 'Введите имя пользователя и пароль');
+            } else if(identification && (!password || !checkPassword)) {
+               this.set('errorMessage', 'Введите пароль');
+            } else if(identification && password) {
+               this.set('errorMessage', 'Введеные пароли не совпадают');
+            }
          }
+      },
+
+      clearMessage() {
+         this.set('errorMessage', '');
       }
    }
 });

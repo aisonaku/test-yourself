@@ -2,7 +2,7 @@ import Ember from 'ember';
 import Base from 'ember-simple-auth/authenticators/base';
 import fetch from 'ember-network/fetch';
 
-const { RSVP: { Promise }, isEmpty, run, assign: emberAssign, merge, computed } = Ember;
+const { RSVP: { Promise }, isEmpty, run, assign: emberAssign, merge } = Ember;
 const assign = emberAssign || merge;
 
 export default Base.extend({
@@ -27,7 +27,7 @@ export default Base.extend({
             } else {
                response.json().then(json => run(null, reject, json));
             }
-         }).catch(error => run(null, reject, error));;
+         }).catch(error => run(null, reject, error));
       });
    },
 

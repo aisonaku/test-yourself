@@ -95,8 +95,14 @@ div + .tys-modal-close {
    margin-top: 40px;
 }
 
+.tys-auth-error {
+   color: #da1212;
+   margin-top: 20px;
+   min-height: 25px;
+}
+
 .tys-sign-up-block {
-   margin-top: 40px;
+   margin-top: 20px;
 }
 
 .tys-sign-up-block a {
@@ -165,6 +171,14 @@ div + .tys-modal-close {
     padding: 8px;
 }
 
+.tys-question-results-clear {
+   cursor: pointer;
+   color: #ccc;
+}
+
+.tys-question-results-clear:hover {
+   color: #ca8c8c;
+}
 
 .tys-header {
    height: 50px;

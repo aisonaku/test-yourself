@@ -1,4 +1,5 @@
 import Ember from 'ember';
+const { RSVP: { Promise }, $ } = Ember;
 
 export default Ember.Controller.extend({
    actions: {
