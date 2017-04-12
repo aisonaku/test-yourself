@@ -5,15 +5,15 @@
       <form {{action 'signup' on='submit'}}>
          <div class="tys-auth-name">
             <label for="identification">Имя пользователя</label>
-            {{input id='identification' placeholder='Имя пользователя' value=identification action="clearMessage"}}
+            {{input id='identification' placeholder='Имя пользователя' value=identification }}
          </div>
          <div class="tys-auth-pass">
             <label for="password">Пароль</label>
-            {{input id='password' placeholder='Пароль' type='password' value=password action="clearMessage"}}
+            {{input id='password' placeholder='Пароль' type='password' value=password }}
          </div>
          <div class="tys-auth-pass">
             <label for="checkPassword">Подтверждение пароля</label>
-            {{input id='checkPassword' placeholder='Пароль' type='password' value=checkPassword action="clearMessage"}}
+            {{input id='checkPassword' placeholder='Пароль' type='password' value=checkPassword }}
          </div>
          <button class="tys-auth-submit tys-button" type="submit">Регистрация</button>
          <div class="tys-auth-error">
