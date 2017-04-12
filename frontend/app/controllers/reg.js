@@ -39,6 +39,8 @@ export default Ember.Controller.extend({
                this.set('errorMessage', 'Введите имя пользователя и пароль');
             } else if(identification && (!password || !checkPassword)) {
                this.set('errorMessage', 'Введите пароль');
+            } else if(!identification) {
+               this.set('errorMessage', 'Введите имя пользователя');
             } else if(identification && password) {
                this.set('errorMessage', 'Введеные пароли не совпадают');
             }

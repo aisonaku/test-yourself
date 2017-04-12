@@ -5,7 +5,7 @@ export default DS.Model.extend({
    text: DS.attr(),
    answers: DS.attr(),
    answersLeft: Ember.computed('category', function() {
-      let arr = this.get('answers.data').map((item, index) => {
+      let arr = this.get('answers.data').map(item => {
          return {
             id: item.id,
             value: item.attributes.text
@@ -14,7 +14,7 @@ export default DS.Model.extend({
       return arr;
    }),
    answersRight: Ember.computed('category', function() {
-      let arr = this.get('answers.data').map((item, index) => {
+      let arr = this.get('answers.data').map(item => {
          return {
             id: item.id,
             value: item.attributes.text

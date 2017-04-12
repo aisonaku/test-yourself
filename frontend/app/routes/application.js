@@ -12,7 +12,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       },
 
       closeQuestion: function() {
-         return this.get('store').findAll('quiz').then(data => {
+         return this.get('store').findAll('quiz').then(() => {
             return this.disconnectOutlet({
                outlet: 'questions',
                parentView: 'application'
