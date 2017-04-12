@@ -9,7 +9,7 @@
        <div class="tys-quizzes-item">
 		      <div class="tys-question-results-title" title="{{ quiz.title }}">{{ answer.title }}</div>
             <div class="tys-question-results-percent text-shortcut" title="{{ answer.title }}">{{ answer.stringView }}</div>
-            <div class="tys-question-results-clear" {{ action "deleteResultsForQuiz" answer.quiz_id }}>Сбросить результат</div>
+            <!-- <div class="tys-question-results-clear" {{ action "deleteResultsForQuiz" answer.quiz_id }}>Сбросить результат</div> -->
 		 </div>
       {{/each}}
    {{/list-filter}}

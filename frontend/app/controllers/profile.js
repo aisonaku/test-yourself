@@ -26,7 +26,6 @@ export default Ember.Controller.extend({
                type: 'DELETE',
                success: () => {
                   this.send('getResultForQuiz');
-                  this.container.reset();
                   this.transitionToRoute('profile');
                }
             });
